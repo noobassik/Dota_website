@@ -1,0 +1,16 @@
+﻿@model PlayerModel
+<h1>Редактировать игрока</h1>
+
+<form asp-action="Edit">
+    <div class="form-group">
+        <label asp-for="Name">Имя:</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Country">Страна:</label>
+        <input asp-for="Country" class="form-control" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>

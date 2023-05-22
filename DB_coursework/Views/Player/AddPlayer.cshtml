@@ -1,0 +1,26 @@
+﻿@model PlayerModel
+<h1>Добавить игрока</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name">Имя:</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Country">Страна:</label>
+        <input asp-for="Country" class="form-control" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Team.Name" class="control-label">Команда:</label>
+        <select asp-for="Team.Name" class="form-control">
+            <option value="">-- Выберите команду --</option>
+            @foreach (var team in ViewBag.Teams)
+            {
+                    <option value="@team.Name">@team.Name</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>
